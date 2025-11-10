@@ -10,6 +10,9 @@ body{
     --fondo-dias-semana : #09f;
     --fondo-celda-laboral: color-mix(in srgb, var(--fondo-dias-semana) 20%, white 80%);
     --fondo-numero-semana: color-mix(in srgb, var(--fondo-dias-semana) 50%, yellow 50%);
+    --fondo-fin-de-semana:lemonchiffon;
+    --fondo-otro-mes: #f3f1f1ca;
+    --borde-otro-mes: #888;
     --festivo : red;
     --blanco: white;
     display:flex;
@@ -26,13 +29,11 @@ body{
 }
  
 .contenedor {
-    display: grid;
-    grid-template-columns: 30px 1fr;
-    grid-template-rows: 30px 1fr;
-    flex: 1;
+    display: flex;
     gap: 3px;
     border:3px solid rgb(128, 0, 0);
     box-sizing: border-box;
+    flex: 1;
 }
 
 .contenedor > span {
@@ -42,31 +43,6 @@ body{
     background-color:  var(--fondo-numero-semana);
 }
 
-
-
-.contenedor .titulo-dia {
-    display: flex;
-    flex-direction: row;
-    background-color: var(--fondo-dias-semana);
-    justify-content: space-between;
-    align-items: center;
-
-    & span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid beige;
-        font-size: 1.75rem;
-        font-weight: 800;
-        color: var(--blanco);
-        height: 100%;
-        width: 100%;
-    }
-
-     .domingo {
-        background-color: var(--festivo);
-    }
-}
 
 .festivo {
     color: var(--festivo);
@@ -87,13 +63,23 @@ body{
         width: 100%;
         background-color:  var(--fondo-numero-semana);
     }
+
 }
+
+    .numero-semana span:first-child {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        height: 80px;
+
+    }
 
 .contenedor-dias {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 22px repeat(5, 1fr);
     height: 100%;
+    width: 100%;
     gap: 3px;
     font-weight: 700;
  
@@ -106,31 +92,59 @@ body{
         
     }
 
-    & .num-semana {
-        background-color: var(--fondo-numero-semana);
-    }
-
-    & .sabado, .domingo {
-        background-color: lemonchiffon;
-    }
-
-    & .domingo {
-        border:1px dashed var(--festivo);
-        color: var(--festivo);
+    & .dia-semana {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        background-color: var(--fondo-dias-semana);
+        font-size: 1.5rem;
+        color: var(--blanco)
     }
 }
 
+
+
+.contenedor-dias span:nth-of-type(7n) {
+    color: var(--festivo);
+    background-color: var(--fondo-fin-de-semana);
+    border:1px dashed var(--festivo);
+}
+
+.contenedor-dias :nth-of-type(6),
+.contenedor-dias :nth-of-type(13),
+.contenedor-dias :nth-of-type(20),
+.contenedor-dias :nth-of-type(27),
+.contenedor-dias :nth-of-type(34),
+.contenedor-dias :nth-of-type(41) {
+    background-color: var(--fondo-fin-de-semana);
+}
+
+.dia-semana.sabado, 
+.contenedor-dias .dia-semana.domingo {
+    background-color: var(--fondo-dias-semana);
+}
+
+
 .start-day {
     grid-column-start: 4;
-}   
+}  
 
-.titulo-dia span::before {
+.contenedor-dias .otro-mes {
+    background-color: var(--fondo-otro-mes);
+    border:1px dashed var(--borde-otro-mes);
+}
+
+
+ .dia-semana::before {
     content: attr(data-full);
 }
 
 
 @media screen and (max-width: 991px) {   
-    .titulo-dia span::before {
+    .dia-semana::before {
         content: attr(data-med);
     }
 }
@@ -138,7 +152,7 @@ body{
 @media screen and (max-width: 767px) {
 
     
-    .titulo-dia span::before {
+    .dia-semana::before {
         content: attr(data-short);
     }
 }
