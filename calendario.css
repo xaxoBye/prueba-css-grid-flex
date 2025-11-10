@@ -124,38 +124,22 @@ body{
     grid-column-start: 4;
 }   
 
+.titulo-dia span::before {
+    content: attr(data-full);
+}
 
-@media screen and (max-width: 991px) {
-    .titulo-dia span {
-        font-size: 0;  
-        position: relative;
-    }
-    
+
+@media screen and (max-width: 991px) {   
     .titulo-dia span::before {
         content: attr(data-med);
-        font-size: 1.75rem; 
-        position: absolute;
-        inset: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .titulo-dia span {
-        font-size: 0;  
-        position: relative;
-    }
+
     
     .titulo-dia span::before {
         content: attr(data-short);
-        font-size: 1.75rem;  
-        position: absolute;
-        inset: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
 

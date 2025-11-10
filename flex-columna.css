@@ -15,11 +15,69 @@ header {
     border:1px dashed blue;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 main {
     border: 1px solid lightcoral;
     background-color: burlywood;
     flex:1;
+}
+
+.eventos {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap:25px;
+}
+
+.eventos ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.evento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+.running, .tandem, .nadar, .fisico, .triatlon, .cursas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border:1px solid black;
+    border-radius: 50%;
+    font-size:2rem;
+}
+
+.running {
+    background-color: lightcoral;
+}
+.tandem {
+    background-color: lightseagreen;
+}
+.nadar {
+    background-color: lightskyblue;
+}
+.fisico {
+    background-color: lightcyan;
+}
+.triatlon {
+    background-color: rgb(233, 203, 126);
+}
+
+.svg-bici {
+    transform: translateX(2px);
+}
+.svg-run {
+    transform: translateY(-12px) translateX(4px);
+}
+.svg-nadar {
+    transform: translateY(12px) translateX(-7px);
 }
