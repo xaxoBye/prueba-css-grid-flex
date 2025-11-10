@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>        
+    </section>
+
+    <footer>
+        <pre>
+            <style contenteditable
+                    style="display:block; border: 1px dashed #09F; width:80vw; margin:-0px auto;">
+    body {
+        background-color: #ddd;
+    }
+    
+    .container {
+        display: grid;
+        height: 50vh;
+        grid-template-columns: 30px 1fr 1fr;
+        background-color: lightsalmon;
+        border: 3px solid black;
+        border-radius: 10px;
+
+        & div {
+            background-color: lightblue;
+            border: 2px solid red;
+            border-radius: 6px;
+        }
+    }
+            </style>
+        </pre>
+    </footer>
+
+</body>
+</html>

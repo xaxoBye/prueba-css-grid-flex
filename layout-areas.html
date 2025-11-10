@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <header>
+            cabecera
+        </header>
+        <aside>
+            contenido lateral
+        </aside>
+        <main>
+            Contenido principal
+        </main>
+        <footer>
+            pie de página
+        </footer>
+    </section>
+    <footer>
+        <pre>   
+            <style contenteditable
+                    style="display:block; border: 1px dashed blue; width:80vw; margin:0 auto;">
+                
+                body{
+                    margin: 0;
+                }
+
+                .container {
+                    display: grid;
+                    grid-template-columns: repeat(3,1fr);
+                    grid-template-rows: 35px 1fr 100px;
+                    min-height: 100vh;
+                    grid-template-areas: 
+                        "header header header"
+                        "sidebar content content "
+                        "footer footer footer";
+                }
+
+                .container header {
+                    background-color: #09f;
+                    grid-area: header;
+                }
+
+                .container aside {
+                    background-color: darkorange;
+                    grid-area: sidebar;
+                }
+
+                .container main {
+                    background-color: lightgreen;
+                    grid-area: content;
+                 
+                }
+                .container footer {
+                    background-color: #fea2a2;
+                    grid-area: footer;
+                   
+                }
+            </style>
+        </pre>
+    </footer>
+</body>
+</html>

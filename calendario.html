@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./calendario.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        document.querySelectorAll('.titulo-dia span').forEach(el => {
+            if (window.innerWidth < 991) el.textContent = el.dataset.med;
+            if (window.innerWidth < 767) el.textContent = el.dataset.short;
+        });
+        
+    </script>
+</head>
+<body>
+    <header class="cabecera">
+        <h1>ENERO 2026</h1>
+    </header>
+    
+    <section class="contenedor">     
+        <span>S</span>
+        <aside class="titulo-dia">
+            <span class="dia-semana" data-full="LUNES" data-med="LUN" data-short="L">LUNES</span>
+            <span class="dia-semana" data-full="MARTES" data-med="MAR" data-short="M">MARTES</span>
+            <span class="dia-semana" data-full="MIÉRCOLES" data-med="MIÉ" data-short="X">MIÉRCOLES</span>
+            <span class="dia-semana" data-full="JUEVES" data-med="JUE" data-short="J">JUEVES</span>
+            <span class="dia-semana" data-full="VIERNES" data-med="VIE" data-short="V">VIERNES</span>
+            <span class="dia-semana sabado" data-full="SÁBADO" data-med="SÁB" data-short="S">SÁBADO</span>
+            <span class="dia-semana domingo" data-full="DOMINGO" data-med="DOM" data-short="D">DOMINGO</span>
+        </aside>
+        <aside class="numero-semana">
+            <span class="num-semana">1</span>
+            <span class="num-semana">2</span>
+            <span class="num-semana">3</span>
+            <span class="num-semana">4</span>
+            <span class="num-semana">5</span>
+        </aside>
+        <main class="contenedor-dias">
+                        <span class="start-day festivo">1</span>
+                        <span>2</span>
+                        <span class="sabado">3</span>
+                        <span class="domingo">4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                
+                        <span>8</span>
+                        <span>9</span>
+                        <span class="sabado">10</span>
+                        <span class="domingo">11</span>
+                        <span>12</span>
+                        <span>13</span>
+                        <span>14</span>
+                
+                        <span>15</span>
+                        <span>16</span>
+                        <span class="sabado">17</span>
+                        <span class="domingo">18</span>
+                        <span>19</span>
+                        <span>20</span>
+                        <span>21</span>
+                
+                        <span>22</span>
+                        <span>23</span>
+                        <span class="sabado">24</span>
+                        <span class="domingo">25</span>
+                        <span>26</span>
+                        <span>27</span>     
+                        <span>28</span>
+
+                        <span>29</span>
+                        <span>30</span>
+                        <span class="sabado">31</span>                              
+        </main>              
+
+    </section>
+</body>
+</html>

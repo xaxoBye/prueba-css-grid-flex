@@ -1,0 +1,25 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    border:1px dashed blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    border: 1px solid lightcoral;
+    background-color: burlywood;
+    flex:1;
+}
