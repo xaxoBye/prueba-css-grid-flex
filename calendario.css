@@ -143,9 +143,15 @@ body{
 }
 
 
-@media screen and (max-width: 991px) {   
+@media screen and (max-width: 991px) { 
+     
     .dia-semana::before {
         content: attr(data-med);
+    }
+
+    .contenedor-dias  span {
+        line-height: 3rem;
+        font-size: 3rem;
     }
 }
 
@@ -154,6 +160,11 @@ body{
     
     .dia-semana::before {
         content: attr(data-short);
+    }
+
+    .contenedor-dias  span {
+        line-height: 2rem;
+        font-size: 2.5rem;
     }
 }
 
