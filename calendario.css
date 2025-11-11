@@ -15,10 +15,15 @@ body{
     --borde-otro-mes: #888;
     --festivo : red;
     --blanco: white;
+
+
     display:flex;
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+
+
+    border-radius: 50px;
 }
 
 .cabecera {
@@ -33,7 +38,16 @@ body{
     gap: 3px;
     border:3px solid rgb(128, 0, 0);
     box-sizing: border-box;
-    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    container-type: inline-size;
+    container-name: container-contenedor;
+}
+
+main {
+    border:10px hidden rgb(174, 0, 255);
+    border-radius: 8px;
 }
 
 .contenedor > span {
@@ -66,13 +80,13 @@ body{
 
 }
 
-    .numero-semana span:first-child {
-        display: flex;
-        align-items: center;
-        align-content: center;
-        height: 80px;
+.numero-semana span:first-child {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 80px;
 
-    }
+}
 
 .contenedor-dias {
     display: grid;
@@ -156,8 +170,7 @@ body{
 }
 
 @media screen and (max-width: 767px) {
-
-    
+   
     .dia-semana::before {
         content: attr(data-short);
     }
@@ -165,6 +178,27 @@ body{
     .contenedor-dias  span {
         line-height: 2rem;
         font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .numero-semana {
+        display: none;
+    }
+    
+    .dia-semana::before {
+        content: attr(data-short);
+    }
+
+    .contenedor-dias  span {
+        line-height: 1.5rem;
+        font-size: 2rem;
+    }
+}
+
+@container container-contenedor (width < 395px) {
+    .dia-semana {
+        color:green;
     }
 }
 
