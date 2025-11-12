@@ -34,13 +34,10 @@ body{
 .contenedor {
     display: flex;
     gap: 3px;
-    border:3px solid rgb(128, 0, 0);
     box-sizing: border-box;
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: auto;
-    container-type: inline-size;
-    container-name: container-contenedor;
 }
 
 main {
@@ -113,6 +110,7 @@ main {
         box-sizing: border-box;
         background-color: var(--fondo-dias-semana);
         font-size: 1.5rem;
+        line-height: 0.9;  
         color: var(--blanco)
     }
 }
@@ -134,9 +132,16 @@ main {
     background-color: var(--fondo-fin-de-semana);
 }
 
-.dia-semana.sabado, 
-.contenedor-dias .dia-semana.domingo {
+.contenedor-dias .dia-semana.sabado {
     background-color: var(--fondo-dias-semana);
+    
+}
+
+
+.contenedor-dias .dia-semana.domingo { 
+    border:none;
+    color: var(--blanco);
+    background-color: rgb(255, 0, 0);
 }
 
 
@@ -194,11 +199,7 @@ main {
     }
 }
 
-@container container-contenedor (width < 895px) {
-    .dia-semana {
-        color:green;
-    }
-}
+
 
 
  /* 
